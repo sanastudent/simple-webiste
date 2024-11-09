@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { FaGraduationCap } from "react-icons/fa6";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        
+      <header className="navbar flex justify-between p-3 items-center bg-gradient-to-r from-blue-300 to-purple-500" >
+     {/* logo */}
+
+      <div>
+      <h2 className="logo text-6xl ml-24" ><FaGraduationCap /></h2>
+      </div>
+
+         {/* {buttons link} */}
+         <div>
+         <nav>
+         <ul className="flex mr-20 list-none">
+         <li className="mr-12"><Link href={"/"}>Welcome</Link></li>
+         <li  className="mr-12"><Link href={"/about"}>About US</Link></li>
+         <li  className="mr-12"><Link href={"/contact"}>Contact Us</Link></li>
+         </ul>
+         </nav>
+         </div>
+         </header>
+
+        
+        
+        
+        
+        
+        
+        {children}</body>
     </html>
   );
 }
